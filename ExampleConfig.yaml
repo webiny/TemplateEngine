@@ -18,6 +18,7 @@ TemplateEngine:
     # just ommit this definition in your config file.
     Bridges:
         Smarty: \Webiny\Component\TemplateEngine\Bridge\Smarty\Smarty
+    # You don't need this part if you are using Composer autoload.
     ClassLoader:
         Smarty_:
             Path: '/var/www/Vendors/Smarty/libs/sysplugins'

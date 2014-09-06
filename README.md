@@ -1,7 +1,33 @@
 Template Engine Component
 =========================
 
-`TemplateEngine` component provides a layer for rendering view templates. The definition of the view template depends
+`TemplateEngine` component provides a layer for rendering view templates.
+
+ Install the component
+ ---------------------
+ The best way to install the component is using Composer.
+
+ ```json
+ {
+     "require": {
+         "webiny/template-engine": "dev-master"
+     }
+ }
+ ```
+ For additional versions of the package, visit the [Packagist page](https://packagist.org/packages/webiny/template-engine).
+ Optionally you can add `"minimum-stability": "dev"` flag to your composer.json.
+
+ Once you have your `composer.json` file in place, just run the install command.
+
+     $ php composer.phar install
+
+ To learn more about Composer, and how to use it, please visit [this link](https://getcomposer.org/doc/01-basic-usage.md).
+
+ Alternatively, you can also do a `git checkout` of the repo.
+
+## Usage
+
+The definition of the view template depends
 on the selected driver. By default the template engine comes with a driver for `Smarty`, but you can easily add
 support for `Twig` or some other template engines.
 

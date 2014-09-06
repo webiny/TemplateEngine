@@ -18,8 +18,3 @@ TemplateEngine:
     # just ommit this definition in your config file.
     Bridges:
         Smarty: \Webiny\Component\TemplateEngine\Bridge\Smarty\Smarty
-    ClassLoader:
-        Smarty_:
-            Path: '/var/www/projects/webiny/Vendors/Smarty/libs/sysplugins'
-            Normalize: false
-            Case: lower
