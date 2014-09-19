@@ -23,7 +23,8 @@ class TemplateEngineTest extends \PHPUnit_Framework_TestCase
                                        'CompileDir'  => __DIR__ . '/Templates/Compile',
                                        'CacheDir'    => __DIR__ . '/Templates/Cache',
                                        'TemplateDir' => __DIR__ . '/Templates'
-                                   ]);
+                                   ]
+        );
 
         $this->assertInstanceOf('\Webiny\Component\TemplateEngine\Bridge\TemplateEngineInterface',
                                 TemplateEngine::getInstance('Smarty', $config)

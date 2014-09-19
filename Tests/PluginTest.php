@@ -66,9 +66,10 @@ class PluginTest extends \PHPUnit_Framework_TestCase
     public function dataProvider()
     {
         $plugin = new Plugin('pName', 'pType', 'self::callback', [
-            'p1' => 'a',
-            'p2' => 'b'
-        ]);
+                'p1' => 'a',
+                'p2' => 'b'
+            ]
+        );
 
         return [[$plugin]];
     }

@@ -23,5 +23,7 @@ $_valid = $_smarty_tpl->decodeProperties(array(
 ?>
 <?php if ($_valid && !is_callable('content_53a105ac130cb3_33102338')) {
     function content_53a105ac130cb3_33102338($_smarty_tpl)
-    { ?>Hello World<?php }
+    {
+        ?>Hello World<?php
+    }
 } ?>

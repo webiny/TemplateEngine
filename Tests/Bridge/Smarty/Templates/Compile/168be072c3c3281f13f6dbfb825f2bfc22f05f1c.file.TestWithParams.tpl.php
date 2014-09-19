@@ -27,7 +27,9 @@ $_valid = $_smarty_tpl->decodeProperties(array(
 ?>
 <?php if ($_valid && !is_callable('content_53a105ac1412e3_08703453')) {
     function content_53a105ac1412e3_08703453($_smarty_tpl)
-    { ?>Hello <?php echo $_smarty_tpl->tpl_vars['name']->value; ?>
+    {
+        ?>Hello <?php echo $_smarty_tpl->tpl_vars['name']->value; ?>
         . My name is <?php echo $_smarty_tpl->tpl_vars['otherName']->value; ?>
-        .<?php }
+        .<?php
+    }
 } ?>
