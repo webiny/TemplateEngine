@@ -40,7 +40,8 @@ class SmartyTest extends \PHPUnit_Framework_TestCase
     {
         $config = new ConfigObject([
                                        'CompileDir' => '/tmp/'
-                                   ]);
+                                   ]
+        );
 
         $smarty = new Smarty($config);
     }
@@ -54,7 +55,8 @@ class SmartyTest extends \PHPUnit_Framework_TestCase
         $config = new ConfigObject([
                                        'CompileDir' => '/tmp/',
                                        'CacheDir'   => '/tmp/cache',
-                                   ]);
+                                   ]
+        );
 
         $smarty = new Smarty($config);
     }
@@ -65,7 +67,8 @@ class SmartyTest extends \PHPUnit_Framework_TestCase
                                        'CompileDir'  => '/tmp/',
                                        'CacheDir'    => '/tmp/',
                                        'TemplateDir' => __DIR__
-                                   ]);
+                                   ]
+        );
 
         $smarty = new Smarty($config);
 
@@ -135,9 +138,9 @@ class SmartyTest extends \PHPUnit_Framework_TestCase
     public function testFetchWithParams(Smarty $smarty)
     {
         $result = $smarty->fetch('TestWithParams.tpl', [
-                                                         'name'      => 'Batman',
-                                                         'otherName' => 'Superman'
-                                                     ]
+                'name'      => 'Batman',
+                'otherName' => 'Superman'
+            ]
         );
         $this->assertSame('Hello Batman. My name is Superman.', $result);
     }
@@ -186,7 +189,8 @@ class SmartyTest extends \PHPUnit_Framework_TestCase
                                        'CompileDir'  => __DIR__ . '/Templates/Compile',
                                        'CacheDir'    => __DIR__ . '/Templates/Cache',
                                        'TemplateDir' => __DIR__ . '/Templates'
-                                   ]);
+                                   ]
+        );
 
         $smarty = new Smarty($config);
 
