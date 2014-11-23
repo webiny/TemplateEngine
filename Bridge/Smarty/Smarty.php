@@ -65,6 +65,11 @@ class Smarty implements TemplateEngineInterface
             $this->setForceCompile(false);
         }
 
+        // merge compiled includes
+        if (!$config->get('MergeCompiledIncludes', true)) {
+            $this->setMergeCompiledIncludes(false);
+        }
+
         // register extensions
         $this->registerExtensions();
     }
@@ -166,6 +171,26 @@ class Smarty implements TemplateEngineInterface
     }
 
     /**
+     * Force to re-compile the templates on every refresh.
+     *
+     * @param bool $mergeCompiledIncludes
+     */
+    public function setMergeCompiledIncludes($mergeCompiledIncludes)
+    {
+        $this->_smarty->inheritance_merge_compiled_includes = $mergeCompiledIncludes;
+    }
+
+    /**
+     * Returns the current value of inheritance_merge_compiled_includes flag.
+     *
+     * @return bool
+     */
+    public function getMergeCompiledIncludes()
+    {
+        return $this->_smarty->inheritance_merge_compiled_includes;
+    }
+
+    /**
      * Fetch the template from the given location, parse it and return the output.
      *
      * @param string $template   Path to the template.
@@ -177,7 +202,9 @@ class Smarty implements TemplateEngineInterface
     public function fetch($template, $parameters = [])
     {
         try {
-            $this->_smarty->assign($parameters);
+            if(count($parameters)>0){
+                $this->_smarty->assign($parameters);
+            }
 
             return $this->_smarty->fetch($template);
         } catch (\Exception $e) {
@@ -195,6 +222,9 @@ class Smarty implements TemplateEngineInterface
      */
     public function render($template, $parameters = [])
     {
+        if(count($parameters)<1){
+            $parameters = null;
+        }
         echo $this->_smarty->fetch($template, $parameters);
     }
 
